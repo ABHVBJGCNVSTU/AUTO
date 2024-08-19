@@ -1,5 +1,4 @@
 const request = require('request');
-const moment = require('moment-timezone');
 
 module.exports.config = {
   name: "bot",
@@ -14,7 +13,6 @@ module.exports.config = {
 
 module.exports.handleEvent = async function({ api, event, args, Threads, Users }) {
   const { threadID, senderID } = event;
-  const time = moment.tz("Asia/Manila").format("HH:MM:ss L");
   const name = await Users.getNameUser(senderID);
 
   const quotes = [
